@@ -29,17 +29,33 @@ body {
 
 .app__stat{
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   margin-bottom: 50px;
 
 }
 
+.app__stat > *{
+  padding: 20px;
+}
+
 .app__stat__map{
-  flex : .7;
+  flex: 8;
+}
+
+.app__stat__barchart{
+  flex-grow: 1;
 }
 
 .app__barchart{
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+}
+
+.app__barchart > *{
+  margin: 20px;
+  flex-grow: 1;
+}
+
+.app__barchart > :first-child{
 }
 
