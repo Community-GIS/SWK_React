@@ -3,12 +3,14 @@ import './App.css';
 import InfoBox from './InfoBox/InfoBox';
 import Map from './Map/Map';
 import Barchart from './Barchart/Barchart';
+import "leaflet/dist/leaflet.css";
 
 function App() {
   
   
   return (
   <div className="app">
+
     <div className="app__header">
       <h1>SWK Dashboard</h1>
       <FormControl className="app__dropdown">
@@ -30,8 +32,13 @@ function App() {
     </div>
 
     <div className="app__stat">
-      <Map/>
-      <Barchart/>
+      <div className="app__stat__map">
+        <Map/>
+      </div>
+
+      <div className="app__stat__barchart">
+        <Barchart/>
+      </div>
     </div>
     {/* monthly barchart */}
     <div className="app__barchart">

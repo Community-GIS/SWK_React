@@ -6,6 +6,13 @@ body {
   background-color: #f5f6fa;
 }
 
+@media (max-width: 990px){
+  .app > *{ 
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
 .app__header{
   display: flex;
   justify-content: space-evenly;
@@ -27,7 +34,12 @@ body {
 
 }
 
+.app__stat__map{
+  flex : .7;
+}
+
 .app__barchart{
   display: flex;
   justify-content: space-around;
 }
+
