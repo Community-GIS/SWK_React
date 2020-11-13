@@ -13,24 +13,23 @@ function App() {
 
     <div className="app__header">
       <h1>SWK Dashboard</h1>
+      <FormControl className="app__dropdown">
+          <Select variant="outlined" value="all">
+            <MenuItem value="all">All</MenuItem>
+            <MenuItem value="lane1">Lane 1</MenuItem>
+            <MenuItem value="lane2">Lane 2</MenuItem>
+            <MenuItem value="lane2">Lane 3</MenuItem>
+          </Select>
+      </FormControl>
 
     </div>
 
     
 
     <div className="app__info">
-
-    <FormControl className="app__dropdown">
-        <Select variant="outlined" value="all">
-          <MenuItem value="all">All</MenuItem>
-          <MenuItem value="lane1">Lane 1</MenuItem>
-          <MenuItem value="lane2">Lane 2</MenuItem>
-          <MenuItem value="lane2">Lane 3</MenuItem>
-        </Select>
-    </FormControl>
-      <InfoBox title={"DRY"} value={"50KG"}/>
-      <InfoBox title={"WET"} value={"60KG"}/>
-      <InfoBox title={"REJECTED"} value={"80KG"}/>
+        <InfoBox title={"DRY"} value={"50KG"}/>
+        <InfoBox title={"WET"} value={"60KG"}/>
+        <InfoBox title={"REJECTED"} value={"80KG"}/>
     </div>
 
     <div className="app__stat">
@@ -42,14 +41,12 @@ function App() {
         <Barchart/>
       </div>
     </div>
-    {/* monthly barchart */}
     <div className="app__barchart">
       <Barchart/>
       <Barchart/>
       <Barchart/>
     </div>
 
-    {/* flowmap */}
     <Map/>
 
   </div>
