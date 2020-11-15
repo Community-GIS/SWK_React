@@ -30,7 +30,7 @@ function App() {
     
 
     <div className="app__info">
-       <InfoBoxes/>
+       <InfoBoxes data={data} selLane={selLane}/>
     </div>
 
     <div className="app__stat">

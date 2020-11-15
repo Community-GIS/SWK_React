@@ -1,12 +1,14 @@
 import {useState,useEffect} from 'react'
 import {csv,json} from 'd3-request';  // only for testing on dummy data
+import { parseInteger } from './util';
 
 export const FetchData = () => {
     const [data,setData] = useState(null);
     useEffect(()=>{
         const url = "https://gist.githubusercontent.com/AnimeshN/229fb500cc795975547231297b0e7773/raw/4f5e46b549c483fcdeb8cb5d520e6b1df346537d/3_month_dummy_swk_cleaned_v1.1.csv";
         csv(url,d=>{
-            setData(d);
+            const formattedData = parseInteger(d);
+            setData(formattedData);
         });
     },[])
     return data;
