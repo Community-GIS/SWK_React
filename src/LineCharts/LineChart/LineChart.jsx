@@ -1,9 +1,8 @@
 import React,{} from 'react'
 import {Line} from 'react-chartjs-2';
-import { calMonthlyData } from '../../util';
 import './LineChart.css';
 
-function Linechart({data,selLane,selCategory}) {
+function Linechart({data}) {
     // const [state,setState] = useState();
     const barData = {
         chartData:{
@@ -24,7 +23,7 @@ function Linechart({data,selLane,selCategory}) {
     return (
         <div className="linechart">
         <Line
-          data={barData.chartData}
+          data={data.chartData}
           options={{
             // title:{
             //   display:this.props.displayTitle,

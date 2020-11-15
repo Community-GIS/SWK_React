@@ -72,3 +72,37 @@ export const calMonthlyData = (data,selLane,selCategory) =>{
       };
     return barData;
 }
+
+
+
+export const calcDailyData = (selLanedata,selCategory) =>{
+    const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'Rejected'};
+    const catData = _.map(selLanedata,colName[selCategory])
+    const date = _.map(selLanedata,'date')
+    
+    console.log(date)
+    const lineData = {
+        chartData:{
+          labels: date,
+          datasets:[
+            {
+              label:`${selCategory} waste`,
+              data:catData,
+              backgroundColor:[
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.6)'
+              ]
+            }
+          ]
+        }
+      };
+    return lineData;
+}
+
+export const sliceLaneData = (data,selLane) =>{
+    if(selLane === 'all')
+        return data;
+    else
+        return data.filter(d => d.lane_name === selLane);
+}

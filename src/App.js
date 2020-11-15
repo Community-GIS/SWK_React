@@ -44,7 +44,7 @@ function App() {
         <Barchart data={data} selLane={selLane} selCategory={selCategory}/>
       </div>
     </div>
-      <LineCharts/>
+      <LineCharts data={data} selLane={selLane}/>
     {/* <Map /> */}
 
   </div>
