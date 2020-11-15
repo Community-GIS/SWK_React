@@ -3,7 +3,7 @@ import InfoBox from './InfoBox/InfoBox';
 import './InfoBoxes.css';
 import {calcTotalWaste} from '../util';
 
-export default function InfoBoxes({data,selLane}) {
+export default function InfoBoxes({data,selLane,selCategory,setSelCategory}) {
     let dry = calcTotalWaste(data,selLane,'drywaste_af');
     let wet = calcTotalWaste(data,selLane,'wetwaste_af');
     let rejected = calcTotalWaste(data,selLane,'Rejected');
@@ -11,9 +11,9 @@ export default function InfoBoxes({data,selLane}) {
     // const [dry,setDry] = useState();
     return (
         <div className="infoboxes">
-        <InfoBox title={"Dry Waste After Seggregation"} value={`${dry}Kg`}/>
-        <InfoBox title={"Wet Waste After Seggregation"} value={`${wet}Kg`}/>
-        <InfoBox title={"Total Rejected Waste"} value={`${rejected}Kg`}/>
+        <InfoBox active={selCategory === 'dry' } onClick={() => setSelCategory("dry")} title={"Dry Waste After Seggregation"} value={`${dry}Kg`}/>
+        <InfoBox active={selCategory === 'wet' } onClick={() => setSelCategory("wet")} title={"Wet Waste After Seggregation"} value={`${wet}Kg`}/>
+        <InfoBox active={selCategory === 'rejected' } onClick={() => setSelCategory("rejected")} title={"Total Rejected Waste"} value={`${rejected}Kg`}/>
         </div>
     )
 }

@@ -12,6 +12,7 @@ function App() {
   const geojson = FetchGeom();
 
   const [selLane,setSelLane] = useState('all');
+  const [selCategory,setSelCategory] = useState('dry');
 
   if(!data || !geojson){
     return(<pre>loading...</pre>)
@@ -30,7 +31,7 @@ function App() {
     
 
     <div className="app__info">
-       <InfoBoxes data={data} selLane={selLane}/>
+       <InfoBoxes data={data} selLane={selLane} selCategory={selCategory} setSelCategory={setSelCategory}/>
     </div>
 
     <div className="app__stat">

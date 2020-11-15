@@ -1,9 +1,9 @@
 import { Card, CardContent, Typography } from '@material-ui/core'
 import React from 'react'
 
-function InfoBox({title,value,active=true}) {
+function InfoBox({title,value,active,onClick}) {
     return (
-        <Card className={`infobox ${active && 'infobox--selected'}`}>
+        <Card onClick={onClick} className={`infobox ${active && 'infobox--selected'}`}>
             <CardContent>
                 <Typography color="textSecondary" varient = "overline"className="infobox__title">{title}</Typography>
                 <h2 className="infobox_value">{value}</h2>
