@@ -1,34 +1,16 @@
 import React,{} from 'react'
 import {Bar} from 'react-chartjs-2';
 import './Barchart.css';
+import { calMonthlyData } from '../util';
 
-function Barchart() {
+function Barchart({data,selLane,selCategory}) {
     // const [state,setState] = useState();
-    const data = {
-        chartData:{
-          labels: ['Lane 1', 'Lane2', 'Lane3'],
-          datasets:[
-            {
-              label:'Dry waste',
-              data:[
-                317594,
-                281045,
-                253060
-              ],
-              backgroundColor:[
-                'rgba(255, 99, 132, 0.6)',
-                'rgba(54, 162, 235, 0.6)',
-                'rgba(255, 206, 86, 0.6)'
-              ]
-            }
-          ]
-        }
-      };
+    const barData = calMonthlyData(data,selLane,selCategory);
 
     return (
         <div className="barchart">
         <Bar
-          data={data.chartData}
+          data={barData.chartData}
           options={{
             // title:{
             //   display:this.props.displayTitle,

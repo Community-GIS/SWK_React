@@ -40,13 +40,13 @@ function App() {
       </div>
 
       <div className="app__stat__barchart">
-        <Barchart/>
+        <Barchart data={data} selLane={selLane} selCategory={selCategory}/>
       </div>
     </div>
     <div className="app__barchart">
+      {/* <Barchart/>
       <Barchart/>
-      <Barchart/>
-      <Barchart/>
+      <Barchart/> */}
     </div>
 
     {/* <Map /> */}
