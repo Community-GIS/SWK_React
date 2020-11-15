@@ -6,6 +6,7 @@ import Dropdown from './Dropdown/Dropdown';
 import "leaflet/dist/leaflet.css";
 import {FetchData,FetchGeom} from './useData';
 import InfoBoxes from './InfoBoxes/InfoBoxes';
+import LineCharts from './LineCharts/LineCharts';
 
 function App() {
   const data = FetchData();
@@ -43,12 +44,7 @@ function App() {
         <Barchart data={data} selLane={selLane} selCategory={selCategory}/>
       </div>
     </div>
-    <div className="app__barchart">
-      {/* <Barchart/>
-      <Barchart/>
-      <Barchart/> */}
-    </div>
-
+      <LineCharts/>
     {/* <Map /> */}
 
   </div>

@@ -31,7 +31,7 @@ export const calMonthlyData = (data,selLane,selCategory) =>{
     const month = {'09':'Sep','10':'Oct','11':'Nov'}; 
     const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'Rejected'};
     let selLaneData;
-    if(selLane == 'all')
+    if(selLane === 'all')
         selLaneData = data;
     else 
         selLaneData = data.filter(d => d.lane_name === selLane)

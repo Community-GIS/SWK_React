@@ -61,14 +61,14 @@ body {
 .app__stat__barchart:first-child:first-child{
   margin-left: 20px ;
 }
-.app__barchart{
+.app__linechart{
   display: flex;
+  gap:20px;
   /* justify-content: space-around; */
 }
 
 
-.app__barchart > *{
-  margin: 20px;
+.app__linechart > *{
   /* flex-grow: 1; */
   flex: 1;
 }
