@@ -54,11 +54,11 @@ body {
 }
 
 .app__stat__map{
-  flex: 8;
+  flex: 1;
 }
 
 .app__stat__barchart{
-  flex-grow: 1;
+  flex: .8;
 }
 
 .app__stat__barchart:first-child:first-child{
@@ -68,6 +68,7 @@ body {
   display: flex;
   /* justify-content: space-around; */
 }
+
 
 .app__barchart > *{
   margin: 20px;
@@ -85,5 +86,9 @@ body {
   margin-top: 100px;
   /* margin-left: 10px; */
   /* padding-left: 20px; */
+}
+
+.infobox--selected{
+  border-top: 10px solid greenyellow;
 }
 

@@ -1,9 +1,9 @@
-import React,{useState} from 'react'
-import {Bar, Line, Pie} from 'react-chartjs-2';
+import React,{} from 'react'
+import {Bar} from 'react-chartjs-2';
 import './Barchart.css';
 
 function Barchart() {
-    const [state,setState] = useState();
+    // const [state,setState] = useState();
     const data = {
         chartData:{
           labels: ['Lane 1', 'Lane2', 'Lane3'],

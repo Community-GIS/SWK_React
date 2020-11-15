@@ -1,27 +1,30 @@
-import { FormControl, MenuItem, Select } from '@material-ui/core';
+import React,{useState} from 'react';
 import './App.css';
 import InfoBox from './InfoBox/InfoBox';
-import Map from './Map/Map';
+import ChoroplethMap from './ChoroplethMap/ChoroplethMap';
 import Barchart from './Barchart/Barchart';
+import Dropdown from './Dropdown/Dropdown';
 import "leaflet/dist/leaflet.css";
+import {FetchData,FetchGeom} from './useData';
 
 function App() {
-  
-  
+  const data = FetchData();
+  const geojson = FetchGeom();
+
+  const [selLane,setSelLane] = useState('all');
+
+  if(!data || !geojson){
+    return(<pre>loading...</pre>)
+  }
+
+
+  // console.log(lanes);
   return (
   <div className="app">
 
     <div className="app__header">
       <h1>SWK Dashboard</h1>
-      <FormControl className="app__dropdown">
-          <Select variant="outlined" value="all">
-            <MenuItem value="all">All</MenuItem>
-            <MenuItem value="lane1">Lane 1</MenuItem>
-            <MenuItem value="lane2">Lane 2</MenuItem>
-            <MenuItem value="lane2">Lane 3</MenuItem>
-          </Select>
-      </FormControl>
-
+      <Dropdown data={data} selLane={selLane} setSelLane={setSelLane}/>
     </div>
 
     
@@ -34,7 +37,7 @@ function App() {
 
     <div className="app__stat">
       <div className="app__stat__map">
-        <Map/>
+        <ChoroplethMap geojson={geojson} data={data} setSelLane={setSelLane}/>
       </div>
 
       <div className="app__stat__barchart">
@@ -47,7 +50,7 @@ function App() {
       <Barchart/>
     </div>
 
-    <Map/>
+    {/* <Map /> */}
 
   </div>
   
