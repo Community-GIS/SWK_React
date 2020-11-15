@@ -27,19 +27,40 @@ export const calcTotalWaste = (data,selLane,cases) =>{
     return totWaste;
 }
 
-export const calMonthlyData = (data,selLanes,selCategory) =>{
-    let label ;
+export const calMonthlyData = (data,selLane,selCategory) =>{
+    const month = {'09':'Sep','10':'Oct','11':'Nov'}; 
+    const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'Rejected'};
+    let selLaneData;
+    if(selLane == 'all')
+        selLaneData = data;
+    else 
+        selLaneData = data.filter(d => d.lane_name === selLane)
+    const groupedData = selLaneData.reduce((obj,elem)=>{
+        let category = elem.date.split('/')[1];
+        if(!obj.hasOwnProperty(category))
+            obj[category] = 0;
+        
+        obj[category] += elem[colName[selCategory]];
+        return obj;
+    },[])
+
+    let calcLabels = [];
+    let calcData = [];
+    // console.log(groupedData);
+    for(let key in groupedData){
+        // console.log(month2[key]);
+        calcLabels.push(month[key]);
+        calcData.push(groupedData[key]);
+    }
+
+    // console.log(groupedData,calcData,calcLabels);
     const barData = {
         chartData:{
-          labels: ['Sep', 'Oct', 'Nov'],
+          labels: calcLabels,
           datasets:[
             {
               label:`${selCategory} waste`,
-              data:[
-                317594,
-                281045,
-                253060
-              ],
+              data:calcData,
               backgroundColor:[
                 'rgba(255, 99, 132, 0.6)',
                 'rgba(54, 162, 235, 0.6)',
