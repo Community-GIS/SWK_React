@@ -1,11 +1,11 @@
 import React,{useState} from 'react';
 import './App.css';
-import InfoBox from './InfoBox/InfoBox';
 import ChoroplethMap from './ChoroplethMap/ChoroplethMap';
 import Barchart from './Barchart/Barchart';
 import Dropdown from './Dropdown/Dropdown';
 import "leaflet/dist/leaflet.css";
 import {FetchData,FetchGeom} from './useData';
+import InfoBoxes from './InfoBoxes/InfoBoxes';
 
 function App() {
   const data = FetchData();
@@ -30,9 +30,7 @@ function App() {
     
 
     <div className="app__info">
-        <InfoBox title={"DRY"} value={"50KG"}/>
-        <InfoBox title={"WET"} value={"60KG"}/>
-        <InfoBox title={"REJECTED"} value={"80KG"}/>
+       <InfoBoxes/>
     </div>
 
     <div className="app__stat">
