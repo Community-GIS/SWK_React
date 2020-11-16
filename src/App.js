@@ -37,7 +37,7 @@ function App() {
 
     <div className="app__stat">
       <div className="app__stat__map">
-        <ChoroplethMap geojson={geojson} data={data} setSelLane={setSelLane}/>
+        <ChoroplethMap geojson={geojson} data={data} setSelLane={setSelLane} selCategory={selCategory}/>
       </div>
 
       <div className="app__stat__barchart">

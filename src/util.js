@@ -115,3 +115,30 @@ export const sliceLaneData = (data,selLane) =>{
     else
         return data.filter(d => d.lane_name === selLane);
 }
+
+
+export const groupDataByCategory = (data,selCategory) =>{
+    const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'Rejected'};
+    const dataByCategory = data.reduce((obj,elem)=>{
+      let category = elem["lane_name"];
+      if(!obj.hasOwnProperty(category))
+          obj[category] = 0;
+      obj[category] += elem[colName[selCategory]]
+      return obj;
+  },[])
+
+  return dataByCategory;
+}
+
+
+export const mergeGeomData = (geojson,dataByCategory) =>{
+  const features = geojson.features;
+  for(let key in features){
+    let laneName = features[key].properties.name;
+    features[key].properties['dataValue'] = dataByCategory[laneName];
+  }
+
+  return geojson;
+  
+}
+
