@@ -6,8 +6,8 @@ import { calMonthlyData } from '../util';
 function Barchart({data,selLane,selCategory}) {
     // const [state,setState] = useState();
     const barData = calMonthlyData(data,selLane,selCategory);
-    let titleText = `${selCategory} Waste Monthly Distribution`;
-    titleText = titleText.charAt(0).toUpperCase() + titleText.slice(1)
+    const upperCaseSelCategory = selCategory.charAt(0).toUpperCase() + selCategory.slice(1)
+    let titleText = `Monthly ${upperCaseSelCategory} Waste Distribution`;
 
     return (
         <div className="barchart">
@@ -17,7 +17,12 @@ function Barchart({data,selLane,selCategory}) {
             title:{
               display:true,
               text:titleText,
-              fontSize:15
+              fontSize:20,
+              // fontWeight: 1,
+              lineHeight: 1.5,
+              fontColor: "rgba(0, 0, 0, 0.54)",
+              fontStyle:'normal',
+              // padding:10
             },
             legend:{
               display:false

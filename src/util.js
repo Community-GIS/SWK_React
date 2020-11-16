@@ -90,11 +90,7 @@ export const calcDailyData = (selLanedata,selCategory) =>{
     const date = _.map(selLanedata,'date')
     const MAXVAL = 15;
     const xAxisLabel = createLabel(date,MAXVAL)
-
     
-      
-    
-    console.log(date)
     const lineData = {
         chartData:{
           labels: xAxisLabel,
@@ -102,11 +98,10 @@ export const calcDailyData = (selLanedata,selCategory) =>{
             {
               label:`${selCategory} waste`,
               data:catData,
-              backgroundColor:[
-                'rgba(255, 99, 132, 0.6)',
-                'rgba(54, 162, 235, 0.6)',
-                'rgba(255, 206, 86, 0.6)'
-              ]
+              fill: false,
+              backgroundColor:'rgba(255, 99, 132, 0.6)',
+              borderColor:'#BAD2E2',
+              pointBackgroundColor:'grey'
             }
           ]
         }
