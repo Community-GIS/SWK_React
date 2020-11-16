@@ -20,7 +20,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
                d > min   ? '#FEB24C' :
                           '#FFEDA0';
     }
-    const purpleOptions = { color: '' }
+    const purpleOptions = { color: 'purple' }
 
 
     const handleMapClick = (e) => {
