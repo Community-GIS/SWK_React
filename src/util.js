@@ -74,16 +74,30 @@ export const calMonthlyData = (data,selLane,selCategory) =>{
 }
 
 
+const createLabel = (oldArr,maxVal) =>{
+    let arr = []
+    let delta = Math.floor( oldArr.length / maxVal );
+
+    for (let i = 0; i < oldArr.length; i=i+delta) {
+        arr.push(oldArr[i]);
+      }
+      return arr;
+}
 
 export const calcDailyData = (selLanedata,selCategory) =>{
     const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'Rejected'};
     const catData = _.map(selLanedata,colName[selCategory])
     const date = _.map(selLanedata,'date')
+    const MAXVAL = 15;
+    const xAxisLabel = createLabel(date,MAXVAL)
+
+    
+      
     
     console.log(date)
     const lineData = {
         chartData:{
-          labels: date,
+          labels: xAxisLabel,
           datasets:[
             {
               label:`${selCategory} waste`,
