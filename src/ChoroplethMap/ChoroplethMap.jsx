@@ -1,5 +1,7 @@
 import React,{useRef} from 'react'
 import { Map, TileLayer , GeoJSON} from "react-leaflet";
+import Control from 'react-leaflet-control';
+
 import "./ChoroplethMap.css";
 import { groupDataByCategory, mergeGeomData , getDomain} from "./../util";
 import { scaleSequential } from "d3-scale";
@@ -20,7 +22,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
                d > min   ? '#FEB24C' :
                           '#FFEDA0';
     }
-    const purpleOptions = { color: 'purple' }
+    const purpleOptions = { color: 'lightgreen' }
 
 
     const handleMapClick = (e) => {
@@ -31,6 +33,8 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
         if(geoJsonRef.current){
             console.log(geoJsonRef.current)
         }
+
+        layer.bindPopup(lane.properties.name);
         // if(lane.properties.name ==='Bhandar Vada & Amar Prem chowk'){
         //     layer.options.style.color = "red";
         // }
@@ -69,6 +73,11 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
           url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
         /> */}
             <GeoJSON key='my-geojson' style={purpleOptions} data={geojsonWithData} onEachFeature={onEachLane}  />
+            <Control position="topright" >
+                <div className="info">
+                    <h4 style={{color:'white'}}>Click on polygon to select lane</h4>
+                </div>
+            </Control>
 
         </Map>
 

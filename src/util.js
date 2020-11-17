@@ -28,7 +28,7 @@ export const calcTotalWaste = (data,selLane,cases) =>{
 }
 
 export const calMonthlyData = (data,selLane,selCategory) =>{
-    const month = {'09':'Sep','10':'Oct','11':'Nov'}; 
+    const month = {9:'Sep',10:'Oct',11:'Nov'}; 
     const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'Rejected'};
     let selLaneData;
     if(selLane === 'all')
@@ -36,7 +36,7 @@ export const calMonthlyData = (data,selLane,selCategory) =>{
     else 
         selLaneData = data.filter(d => d.lane_name === selLane)
     const groupedData = selLaneData.reduce((obj,elem)=>{
-        let category = elem.date.split('/')[1];
+        let category = parseInt(elem.date.split('/')[1]);
         if(!obj.hasOwnProperty(category))
             obj[category] = 0;
         
@@ -52,7 +52,9 @@ export const calMonthlyData = (data,selLane,selCategory) =>{
         calcLabels.push(month[key]);
         calcData.push(groupedData[key]);
     }
-
+    for(let key in month){
+      console.log(key);
+  }
     // console.log(groupedData,calcData,calcLabels);
     const barData = {
         chartData:{
@@ -62,9 +64,9 @@ export const calMonthlyData = (data,selLane,selCategory) =>{
               label:`${selCategory} waste`,
               data:calcData,
               backgroundColor:[
-                'rgba(255, 99, 132, 0.6)',
-                'rgba(54, 162, 235, 0.6)',
-                'rgba(255, 206, 86, 0.6)'
+                'rgba(144, 238, 144, 0.6)',
+                'rgba(144, 238, 144, 0.6)',
+                'rgba(144, 238, 144, 0.6)',
               ]
             }
           ]
@@ -99,8 +101,8 @@ export const calcDailyData = (selLanedata,selCategory) =>{
               label:`${selCategory} waste`,
               data:catData,
               fill: false,
-              backgroundColor:'rgba(255, 99, 132, 0.6)',
-              borderColor:'#BAD2E2',
+              backgroundColor:'lightgreen',
+              borderColor:'lightgreen',
               pointBackgroundColor:'grey'
             }
           ]

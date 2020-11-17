@@ -7,7 +7,9 @@ function Barchart({data,selLane,selCategory}) {
     // const [state,setState] = useState();
     const barData = calMonthlyData(data,selLane,selCategory);
     const upperCaseSelCategory = selCategory.charAt(0).toUpperCase() + selCategory.slice(1)
-    let titleText = `Monthly ${upperCaseSelCategory} Waste Distribution`;
+    const upperCaseSelLane = selLane.charAt(0).toUpperCase() + selLane.slice(1)
+
+    let titleText = `${upperCaseSelLane} Monthly ${upperCaseSelCategory} Waste Distribution`;
 
     return (
         <div className="barchart">

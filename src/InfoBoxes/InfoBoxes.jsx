@@ -11,9 +11,9 @@ export default function InfoBoxes({data,selLane,selCategory,setSelCategory}) {
     // const [dry,setDry] = useState();
     return (
         <div className="infoboxes">
-        <InfoBox active={selCategory === 'dry' } onClick={() => setSelCategory("dry")} title={"Dry Waste After Seggregation"} value={`${dry}Kg`}/>
-        <InfoBox active={selCategory === 'wet' } onClick={() => setSelCategory("wet")} title={"Wet Waste After Seggregation"} value={`${wet}Kg`}/>
-        <InfoBox active={selCategory === 'rejected' } onClick={() => setSelCategory("rejected")} title={"Total Rejected Waste"} value={`${rejected}Kg`}/>
+        <InfoBox active={selCategory === 'dry' } onClick={() => setSelCategory("dry")} title={"Dry Waste After Seggregation"} value={`${dry} kg`} description=""/>
+        <InfoBox active={selCategory === 'wet' } onClick={() => setSelCategory("wet")} title={"Wet Waste After Seggregation"} value={`${wet} kg`} description=""/>
+        <InfoBox active={selCategory === 'rejected' } onClick={() => setSelCategory("rejected")} title={"Total Rejected Waste"} value={`${rejected} kg`} description=""/>
         </div>
     )
 }
