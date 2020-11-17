@@ -10,7 +10,7 @@ export default function Dropdown({data, selLane,setSelLane}) {
         
         <FormControl className="dropdown">
           <Select id="lane-dropdown" variant="outlined" value={selLane} onChange={e=>{setSelLane(e.target.value)}}>
-            <MenuItem key='all' value="all">All</MenuItem>
+            <MenuItem key='all' value="all">All Lanes</MenuItem>
             {lanes.map(lane =>(
                <MenuItem key={lane}value={lane}>{lane}</MenuItem> 
             ))}
