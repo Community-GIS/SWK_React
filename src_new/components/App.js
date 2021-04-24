@@ -52,6 +52,6 @@ export default function App() {
   );
 }
 
-const appDiv = document.getElementById('root');
+const appDiv = document.getElementById('app');
 render(<App/>,appDiv)
 
