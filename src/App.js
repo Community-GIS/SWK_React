@@ -19,6 +19,7 @@ export default function App() {
   if(!data || !geojson){
     return(<pre>loading...</pre>)
   }
+  console.log(geojson)
 
 
   return (

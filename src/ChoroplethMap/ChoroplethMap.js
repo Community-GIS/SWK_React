@@ -47,7 +47,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
         // else if(selYear==='2021'){  setSelMonth('01');}
     //   }
     const dataByDateCategory = groupDataByDateCategory(data,selCategory,selYear,selMonth,selDay)
-    const geojsonWithData = mergeGeomData(geojson,dataByDateCategory);
+    const geojsonWithData = mergeGeomData(geojson.zones,dataByDateCategory);
     
 
     const domain = []
@@ -313,3 +313,7 @@ return (
 }
 
 export default ChoroplethMap
+
+
+// geonode:worli_bubble_updated_15march
+// geonode:worli_spot_updated_10march
