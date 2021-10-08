@@ -11,6 +11,7 @@ import { legendColor } from 'd3-svg-legend'
 import {format} from 'd3-format'
 
 import {extent} from 'd3-array'
+//import * as d3 from 'd3';
 
 import 'd3-transition'
 import L from 'leaflet';
@@ -36,8 +37,8 @@ function ChoroplethMap({geojson,data,bubblePopulationData,setSelLane,selCategory
         obj[category] += elem["bubble_population"]
         return obj;
     },[])
-
-
+    
+    
   
 
    
@@ -83,9 +84,6 @@ function ChoroplethMap({geojson,data,bubblePopulationData,setSelLane,selCategory
     else if(selCategory=='rejected'){
         newtitle=`Seggregated Rejected Waste`
       }
-    else if(selCategory=='total'){
-        newtitle=`Total Waste`
-    }
     let colorLegend = legendColor()
         .labelFormat(format(".2f"))
         .title(`Legend:${newtitle}(Kgs/capita)`)
