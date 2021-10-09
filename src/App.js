@@ -25,7 +25,7 @@ export default function App() {
   <div className="app">
 
     <div className="app__header">
-      <h1>SWK Dashboard</h1>
+      <h1>Waste Management</h1>
       <Dropdown data={data.track} selLane={selLane} setSelLane={setSelLane}/>
     </div>
 
@@ -37,7 +37,7 @@ export default function App() {
 
     <div className="app__stat">
       <div className="app__stat__map">
-        <ChoroplethMap geojson={geojson} data={data.track} bubblePopulationData={data.population} setSelLane={setSelLane} selCategory={selCategory}/>
+        <ChoroplethMap geojson={geojson} da   ta={data.track} bubblePopulationData={data.population} setSelLane={setSelLane} selCategory={selCategory}/>
       </div>
       <div className="app__stat__barchart">
         <Barchart data={data.track} selLane={selLane} selCategory={selCategory}/>
