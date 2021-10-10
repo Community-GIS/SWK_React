@@ -63,16 +63,17 @@ export const getDropdownLanes = (data) =>{
     return uniqueLanes;
 } 
 export const calcTotalWaste = (data,population,selLane,cases) =>{
+  // console.log(data,population,selLane,cases)
     let totWaste,caseCol,percapWaste,popCol,perWaste, roundingPrecision;
     if(selLane ==='all'){
         caseCol = _.map(data,cases)
-        popCol = _.map(population,'bubble_population')
+        popCol = _.map(population,'hostel_population')
 
     }else{
         let selLaneData= data.filter(d => d.zone_id === selLane)
         let selZoneData= population.filter(p => p.zone_id === selLane)
         caseCol = _.map(selLaneData,cases)
-        popCol = _.map(selZoneData,'bubble_population')
+        popCol = _.map(selZoneData,'hostel_population')
     }
     totWaste =  _.sum(caseCol);
     perWaste = _.divide(totWaste,_.sum(popCol));

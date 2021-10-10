@@ -19,24 +19,40 @@
     color:lightgreen;
     font-size: 1.5rem;
   }
-  
-  
-  
-  
+
   .app__dropdown{
     flex:.5;
   }
   
-  .app__info > *{
-    flex:1;
-    margin:20px;
+  .app__categories{
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+
+  .app__categories_info{
+    display: flex;
+    flex-wrap: wrap;
+    flex :6;
+    gap:20px;
+    justify-content: center;
+  }
+
+  .app_categories_donut{
+    justify-content: center;
+    margin-top: 100px;
+    flex:5;
+  }
+  .app__categories_info > *{
+    /* gap:20px; */
+    /* flex:1; */
   }
   
   
-  .app_infobox{
+  /* .app_infobox{
     display: flex;
     justify-content: space-around;
-  }
+  } */
   
   .app__stat{
     display: flex;

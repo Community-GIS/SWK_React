@@ -6,6 +6,7 @@ import Dropdown from './Dropdown/Dropdown';
 import "leaflet/dist/leaflet.css";
 import {FetchData,FetchGeom} from './useData';
 import InfoBoxes from './InfoBoxes/InfoBoxes';
+import SubInfoBoxes from './SubInfoBoxes/SubInfoBoxes';
 import LineCharts from './LineCharts/LineCharts';
 import { render } from 'react-dom';
 
@@ -14,7 +15,7 @@ export default function App() {
   const geojson = FetchGeom();
 
   const [selLane,setSelLane] = useState('all');
-  const [selCategory,setSelCategory] = useState('dry');
+  const [selCategory,setSelCategory] = useState('kitchen');
 
   if(!data || !geojson){
     return(<pre>loading...</pre>)
@@ -30,9 +31,14 @@ export default function App() {
     </div>
 
     
+    <div className="app__categories">
+      <div className="app__categories_info">
+        <InfoBoxes data={data.track} population={data.population} selLane={selLane} selCategory={selCategory} setSelCategory={setSelCategory}/>
+      </div>
 
-    <div className="app__info">
-       <InfoBoxes data={data.track} population={data.population} selLane={selLane} selCategory={selCategory} setSelCategory={setSelCategory}/>
+      <div className="app_categories_donut">
+        <SubInfoBoxes data={data.track} population={data.population} selLane={selLane} selCategory={selCategory} setSelCategory={setSelCategory}/>
+      </div>
     </div>
 
     <div className="app__stat">
@@ -54,4 +60,3 @@ export default function App() {
 
 const appDiv = document.getElementById('root');
 render(<App/>,appDiv)
-

@@ -13,8 +13,8 @@ export const FetchData = () => {
 
         const url = "http://127.0.0.1:8000/iitbtrackid/"
         // const url=`https:swk.communitygis.net/trackid/`;
-        const populationURL = `https://nowaste.communitygis.net/bubblepopulation/`;
-        console.log(url)
+        // const populationURL = `https://nowaste.communitygis.net/bubblepopulation/`;
+        const populationURL = "http://127.0.0.1:8000/iitbPopulation/";
          
         json(url,d=>{
             // const formattedData = parseInteger(d);
