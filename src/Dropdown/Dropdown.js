@@ -12,7 +12,7 @@ export default function Dropdown({data, selLane,setSelLane}) {
           <Select id="lane-dropdown" variant="outlined" value={selLane} onChange={e=>{setSelLane(e.target.value)}}>
             <MenuItem key='all' value="all">All</MenuItem>
             {zones.map(zone =>(
-               <MenuItem key={zone.zone_id} value={zone.zone_id}>{zone.lane_name}</MenuItem> 
+               <MenuItem key={zone.zone_id} value={zone.zone_id}>{zone.zone_name}</MenuItem> 
             ))}
                {/* <MenuItem key={zone.zone_id} value={zone.zone_id}>{zone.lane_name}</MenuItem>  */}
                {/* <MenuItem key="Nagoba Ghumat- Achanak" value="Nagoba Ghumat- Achanak" disabled={true} >Nagoba Ghumat- Achanak</MenuItem> 

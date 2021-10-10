@@ -5,6 +5,7 @@ import {calcTotalWaste} from '../util';
 import _ from 'lodash';
 
 export default function InfoBoxes({data,population,selLane,selCategory,setSelCategory}) {
+    console.log(data)
     let dry = calcTotalWaste(data,population,selLane,'drywaste_af');
     let wet = calcTotalWaste(data,population,selLane,'wetwaste_af');
     let rejected = calcTotalWaste(data,population,selLane,'rejected');

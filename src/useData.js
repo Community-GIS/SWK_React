@@ -9,7 +9,9 @@ export const FetchData = () => {
         let currentURL = window.location.href.split('/')
        
         // const url = `${currentURL[0]}//${currentURL[2]}/trackid/`;
-        const url = "https://nowaste.communitygis.net/trackid/"
+        // const url = "https://nowaste.communitygis.net/trackid/"
+
+        const url = "http://127.0.0.1:8000/iitbtrackid/"
         // const url=`https:swk.communitygis.net/trackid/`;
         const populationURL = `https://nowaste.communitygis.net/bubblepopulation/`;
         console.log(url)

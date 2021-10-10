@@ -50,10 +50,9 @@ export const getDays = (data,year,month) =>{
 
 export let ZONES = [];
 export const getDropdownLanes = (data) =>{
-  console.log(data,"hello")
     const zones_with_id = data.map(d => {
       let temp = {};
-      temp['lane_name'] = d.lane_name;
+      temp['zone_name'] = d.zone_name;
       temp['zone_id'] = d.zone_id;
       return temp
     })
@@ -239,7 +238,6 @@ export const mergeGeomData = (geojson,dataByCategory,zonePopulation) =>{
   
     //   features[key].properties['dataValue'] = value; 
     // }
-    console.log(geojson)
   }
   return geojson;
   
