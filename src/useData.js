@@ -9,12 +9,10 @@ export const FetchData = () => {
         let currentURL = window.location.href.split('/')
        
         // const url = `${currentURL[0]}//${currentURL[2]}/trackid/`;
-        // const url = "https://nowaste.communitygis.net/trackid/"
-
-        const url = "http://127.0.0.1:8000/iitbtrackid/"
+        const url = "https://nowaste.communitygis.net/iitbtrackid/"
         // const url=`https:swk.communitygis.net/trackid/`;
-        // const populationURL = `https://nowaste.communitygis.net/bubblepopulation/`;
-        const populationURL = "http://127.0.0.1:8000/iitbPopulation/";
+        const populationURL = `https://nowaste.communitygis.net/iitbPopulation/`;
+        // const populationURL = "http://127.0.0.1:8000/iitbPopulation/";
          
         json(url,d=>{
             // const formattedData = parseInteger(d);
